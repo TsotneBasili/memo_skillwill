@@ -27,8 +27,11 @@ class Menu:
             for diary in self.diarybook.diaries:
                 if self.authorize.current_user == diary.user:
                     memo_list.append(diary.memo)
-            for memo in sorted(memo_list):
-                print(memo)
+            if len(memo_list) == 0:
+                print("No lists to sort")
+            else:
+                for memo in sorted(memo_list):
+                    print(memo)
 
     def show_all_diaries(self):
         if len(self.diarybook.diaries) == 0:
