@@ -27,8 +27,8 @@ class Menu:
             for diary in self.diarybook.diaries:
                 if self.authorize.current_user == diary.user:
                     memo_list.append(diary.memo)
-            print(sorted(memo_list))
-
+            for memo in sorted(memo_list):
+                print(memo)
 
     def show_all_diaries(self):
         if len(self.diarybook.diaries) == 0:
@@ -36,7 +36,7 @@ class Menu:
         else:
             for diary in self.diarybook.diaries:
                 if self.authorize.current_user == diary.user:
-                    print(f"{diary.id}-{diary.memo}")
+                    print(f"{diary.id}-{diary.memo} - {diary.tags}")
 
     def add_diary(self):
         user = self.authorize.current_user
