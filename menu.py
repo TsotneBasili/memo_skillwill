@@ -28,7 +28,7 @@ class Menu:
                 if self.authorize.current_user == diary.user:
                     memo_list.append(diary.memo)
             if len(memo_list) == 0:
-                print("No lists to sort")
+                print("No memos to sort")
             else:
                 for memo in sorted(memo_list):
                     print(memo)
